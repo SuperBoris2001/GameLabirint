@@ -8,7 +8,6 @@ using UnityEngine.Tilemaps;
 /// </summary>
 public class LevelCreator : MonoBehaviour
 {
-
     public GameObject wall;
     public GameObject floor;
     public GameObject player;
@@ -61,12 +60,13 @@ public class LevelCreator : MonoBehaviour
 
     public void SpawnPlayer(IEnumerable<Vector2Int> tiles, GameObject obj)
     {
-        foreach (Vector2Int tileLocation in tiles)
+        player.transform.position = new Vector3(1, 1, 1);
+/*        foreach (Vector2Int tileLocation in tiles)
         {
             Vector3 position = new Vector3(tileLocation.x, 0, tileLocation.y);
             Instantiate(obj, position, Quaternion.identity);
             return;
-        }
+        }*/
     }
 
     public void DrawMaze(IEnumerable<Vector2Int> tiles, GameObject obj)
